@@ -2,13 +2,14 @@
     <h2>Add a Product!</h2>
     <form ng-submit="addProduct()">
         Name: <input type="text" ng-model="newProduct.name"> <br>
-        Description:<input type="text" ng-model="newProduct.description"> <br>Quantity:<select ng-model="newProduct.quantity"><br>
-		            <option value="1">1</option>
-		            <option value="2">2</option>
-		            <option value="3">3</option>
-		            <option value="4">4</option>
-		        </select><br>
+        Description:<input type="text" ng-model="newProduct.description"> <br>  
+		Quantity:<input type="number" min="1" max="20" ng-model="newProduct.quantity">
         <input type="submit" value="submit">
+
+
+        <br>
+        <br>
+        <input type="text" placeholder="Search" ng-model="search">
     </form>
     <table>
         <thead>
@@ -16,13 +17,15 @@
                 <th>Name</th>
                 <th>Description</th>
                 <th>Quantity</th>
+                <th>Remaining</th>
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="product in products">
+            <tr ng-repeat="product in products | filter: search">
                 <td>{{product.name}}</td>
                 <td>{{product.description}}</td>
-                <td>{{product.quantity}}}</td>
+                <td>{{product.quantity}}</td>
+                <td></td>
             </tr>
         </tbody>
     </table>
