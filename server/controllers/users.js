@@ -41,7 +41,6 @@ function UsersController() {
 
     this.removeCustomer =function(req,res) {
         User.remove({_id:req.params.id}, function(err,customer) {
-            console.log(customer)
             if(err){
                 res.json(err)
             }
@@ -53,12 +52,13 @@ function UsersController() {
     }
 
     this.addProduct = function(req, res) {
+        console.log(req)
         Product.findOne({ name: req.body.name, id: req.body._id , description: req.body.description, quantity: req.body.quantity}, function(err, product) {
             if (err) {
                 res.json(err)
             } else {
                 if (product == null) {
-                    var newProduct= User({ name: req.body.name, id: req.body._id , description: req.body.description, quantity: req.body.quantity })
+                    var newProduct= Product({ name: req.body.name, id: req.body._id , description: req.body.description, quantity: req.body.quantity })
                     newProduct.save(function(newerr) {
                         if (newerr) {
                             res.json(newerr)

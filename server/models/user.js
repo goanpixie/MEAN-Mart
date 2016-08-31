@@ -9,7 +9,7 @@ _products:[{type: Schema.Types.ObjectId, ref :'Product'}],
     type:String,
     required: [true, "First name is required"],
     trim: true,
-    minlength: [6," First name must be atleast 2 letters"]
+    minlength: [6," First name must be atleast 6 letters"]
   }
 }
 ,{timestamps:true})
