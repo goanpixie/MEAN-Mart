@@ -6,10 +6,9 @@ app.controller('productController', ['$scope', '$location', 'userFactory', '$coo
     $scope.products = {};
 
 
-    if($cookies.getObject('newCustomer')){
+    if ($cookies.getObject('newCustomer')) {
         $scope.newCustomer = $cookies.getObject('newCustomer')
-    }
-    else{
+    } else {
         $location.url('/')
     }
 
@@ -23,25 +22,23 @@ app.controller('productController', ['$scope', '$location', 'userFactory', '$coo
                 for (err in data.errors) {
                     console.log(data.errors[err].message)
                     $scope.messages.push(data.errors[err].message)
-                    }
-                    $scope.getProduct();
-                    $scope.newProduct = null
                 }
-            })
+            }
+        
+        })
 
-
-        }
+            $scope.getProduct();
+    }
 
 
     $scope.getProduct = function() {
         userFactory.getProduct(function(data) {
-            console.log("I am in getProduct method-->pController"+data)
             $scope.products = data
         })
     };
     $scope.getProduct();
 
-    
+
 
 
 
