@@ -53,7 +53,6 @@ app.factory('userFactory', ['$http', function($http) {
                 console.log(r_data)
                 callback(r_data.data)
             })
-
         }
 
 
