@@ -4,6 +4,9 @@ app.controller('orderController', ['$scope', '$location', 'userFactory', '$cooki
     $scope.errors = false;
     $scope.messages = [];
     $scope.orders = {};
+    $scope.products =[];
+    $scope.customers = [];
+
 
 
     $scope.getCustomer = function() {
@@ -30,11 +33,15 @@ app.controller('orderController', ['$scope', '$location', 'userFactory', '$cooki
                 for (err in data.errors) {
                     console.log(data.errors[err].message)
                     $scope.messages.push(data.errors[err].message)
+
                 }
             }
+
         })
         	$scope.getOrder();
-        	
+        	console.log($scope.products[index].quantity--);
+
+
     }
 
     $scope.getOrder = function() {
