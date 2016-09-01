@@ -7,5 +7,8 @@ module.exports = function(app){
 	app.get('/remove_customer/:id',users.removeCustomer)
 	app.post('/add_product', users.addProduct)
 	app.get('/get_product', users.getProduct)
+	app.post('/add_order', users.addOrder)
+	app.get('/get_order', users.getOrder)
+
 
 }

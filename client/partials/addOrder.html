@@ -16,3 +16,22 @@ Quantity: <input type="number" min="1" max="10" ng-model="newOrder.quantity">
 <input type="submit" value="Order">
 </form>
 
+<table>
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Product</th>
+			<th>Quantity</th>
+			<th>Date</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="order in orders">
+			<td>{{order.customer}}</td>
+			<td>{{order.product}}</td>
+			<td>{{order.quantity}}</td>
+			<td>{{order.createdAt | date : "MMMM dd yyyy" }}</td>
+		</tr>
+	</tbody>
+</table>
+

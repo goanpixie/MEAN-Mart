@@ -4,7 +4,9 @@ var Schema = mongoose.Schema
 
 var UserSchema = new mongoose.Schema({
 
-_products:[{type: Schema.Types.ObjectId, ref :'Product'}],
+_products:{type: Schema.Types.ObjectId, ref :'Product'},
+_orders: {type: Schema.Types.ObjectId, ref: 'Orders'},
+
   name : {
     type:String,
     required: [true, "First name is required"],

@@ -40,6 +40,24 @@ app.factory('userFactory', ['$http', function($http) {
 
         }
 
+        this.addOrder = function(order,callback) {
+        	console.log("I am in addOrder method-->factory" + order)
+        	$http.post('/add_order',order).then(function(r_data){
+        		console.log(r_data)
+        		callback(r_data.data)
+        	})
+        }
+
+        this.getOrder = function(callback) {
+            $http.get('/get_order').then(function(r_data) {
+                console.log(r_data)
+                callback(r_data.data)
+            })
+
+        }
+
+
+
 
 
 

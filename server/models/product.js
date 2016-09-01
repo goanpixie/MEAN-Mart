@@ -4,6 +4,7 @@ var Schema = mongoose.Schema
 
 var ProductSchema = new mongoose.Schema({
 _customers: {type: Schema.Types.ObjectId, ref: 'Customer'},
+_orders: {type: Schema.Types.ObjectId, ref: 'Orders'},
   name : {
     type:String,
     required: [true, "Product name is required"],

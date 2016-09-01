@@ -15,7 +15,6 @@ app.controller('productController', ['$scope', '$location', 'userFactory', '$coo
     $scope.addProduct = function() {
 
         userFactory.addProduct($scope.newProduct, function(data) {
-            console.log(data)
             $scope.messages = []
             if (data.errors) {
                 $scope.errors = true;
@@ -37,9 +36,5 @@ app.controller('productController', ['$scope', '$location', 'userFactory', '$coo
         })
     };
     $scope.getProduct();
-
-
-
-
 
 }])
