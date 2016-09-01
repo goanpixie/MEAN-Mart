@@ -4,6 +4,14 @@
 	<a href="#/addOrder">Orders</a> |
 	<a href="#/addCustomer">Customers</a>  |
 	Settings </h3>
-		
+	
+	<h2>Time line:</h2>
+	<div ng-repeat="customer in customers">
+		<p>{{customer.name}} joined store on {{customer.createdAt | date : "MMMM dd yyyy"}}</p>
+	</div>	
+
+	<h2>Recent Orders:</h2>
+	<div ng-repeat="order in orders">
+		<p>{{order.customer}} purchased {{order.quantity}}{{order.product}} on {{order.createdAt | date : "MMMM dd yyyy"}}{{order._id}}</p>
+	</div>	
     
-</div>

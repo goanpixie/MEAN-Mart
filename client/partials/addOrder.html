@@ -1,3 +1,7 @@
+<h3><a href="#/home">Back</a> |
+<a href="#/addProduct">Add a Product</a> |
+<a href="#/addCustomer">Add a Customer</a></h3>
+
 <h2>Ready to place an order?</h2>
 
 <form ng-submit="addOrder()">
@@ -31,6 +35,11 @@ Quantity: <input type="number" min="1" max="10" ng-model="newOrder.quantity">
 			<td>{{order.product}}</td>
 			<td>{{order.quantity}}</td>
 			<td>{{order.createdAt | date : "MMMM dd yyyy" }}</td>
+
+		</tr>
+
+		<tr ng-repeat="product in products">
+			<td>{{product[index]}}</td>
 		</tr>
 	</tbody>
 </table>
